@@ -10251,11 +10251,12 @@ span.cursor {
     line-height: 45px; } }
 
 @media only screen and (max-width: 992px) {
+   .w3l-banner img {
+    display: none;
+  }
   .w3l-banner {
-    margin-top: 66px; }
-    .w3l-banner img {
-      display: none;
-    } }
+    margin-top: 66px; 
+  }}
 
 @media only screen and (max-width: 568px) {
   .w3l-banner img {

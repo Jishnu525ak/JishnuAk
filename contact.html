@@ -123,38 +123,26 @@ Author URL: http://w3layouts.com
                     </div>
                 </div>
                 <div class="map-content-9">
-                  <!--<h4 class="mb-4">Get In Touch</h4>-->
-                  <form id="submit-form" action="">
-                    <label for="fname">Name</label>
-                    <input type="text" id="fname" name="name" placeholder="Your name.." class="form-control">
-                    <label for="lname">Email</label>
-                    <input type="text" id="lname" name="email" placeholder="Email Id.."class="form-control">
-          
-                    <label for="subject">Subject</label>
-                    <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
-                    <!--<input type="submit" value="Submit">-->
-                    <button type="submit" class="btn btn-primary btn-style mt-4">Submit</button>
-                   </form>
-                </div>
-                 <!--<div class="map-content-9">
-                    <form action="https://sendmail.w3layouts.com/submitForm" method="post">
+                <h4 class="mb-4">Get In Touch</h4>
+                <div class="map-content-9">
+                    <form id="submit-form" action="" >
                         <div class="twice-two">
-                            <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="Name"
+                            <input type="text" class="form-control" name="Name" id="w3lName" placeholder="Name"
                                 required="">
-                            <input type="email" class="form-control" name="w3lSender" id="w3lSender" placeholder="Email"
+                            <input type="email" class="form-control" name="Sender" id="w3lSender" placeholder="Email"
                                 required="">
                         </div>
                         <div class="twice">
-                            <input type="text" class="form-control" name="w3lSubject" id="w3lSubject"
+                            <input type="text" class="form-control" name="Subject" id="w3lSubject"
                                 placeholder="Subject" required="">
                         </div>
-                        <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message"
+                        <textarea name="Message" class="form-control" id="w3lMessage" placeholder="Message"
                             required=""></textarea>
                         <div class="text-right">
                             <button type="submit" class="btn btn-primary btn-style mt-4">Send Message</button>
                         </div>
                     </form>
-                </div>-->
+                </div>
             </div>
         </div>
     </div>
@@ -418,6 +406,28 @@ Author URL: http://w3layouts.com
   });
 </script>
 <!--//MENU-JS-->
+<!-- contact form-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $("#submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycbzR_MnFNeNE4s8oAW54p9EjqrT9-lAtrC_qEuCIlr3bJ7yhKXpV/exec",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Form submitted successfully")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
+      })
+  })
+</script>
+<!--end of contact form-->
 
 <!-- bootstrap js -->
 <script src="assets/js/bootstrap.min.js"></script>
